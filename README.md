@@ -1,1 +1,65 @@
-# Customer-Segmentation-using-RFM-Analysis-
+**Methodology & Technical Approach**
+
+- Analyzed Los Angeles crime data (2020–2025) using the official Crime Data from 2020 to Present dataset
+- Processed over 1 million crime records containing temporal, geographic, demographic, and offense-level attributes
+- Integrated economic indicators (unemployment rate) from the Federal Reserve Bank of St. Louis (FRED) to assess macroeconomic relationships
+- Performed comprehensive data inspection to evaluate schema, data types, completeness, and memory usage
+- Identified high-null, redundant, or semantically ambiguous columns
+- Removed 12 low-value columns including vague crime codes, redundant geographic fields, and sparsely populated attributes
+- Executed structured data cleaning by:
+    - Converting date and time fields to standardized datetime formats
+    - Handling missing values using domain-appropriate defaults (e.g., “Unknown”, “No Weapon Used”)
+    - Mapping coded categorical variables (victim sex, descent) to interpretable labels
+    - Removing redundant identifiers and resolving inconsistent formats
+- Engineered new analytical features:
+    - Crime severity classification (Serious vs Less Serious)
+    - Victim age categories (Juvenile, Adult, Senior Citizen)
+    - Time-of-day buckets (Morning, Afternoon, Evening, Night)
+    - Monthly and yearly aggregation keys for temporal analysis
+- Conducted Exploratory Data Analysis (EDA) to identify crime patterns and trends
+- Analyzed yearly and monthly crime volumes to identify long-term trends
+- Identified crime peaks in 2022–2023 followed by declines influenced by reporting system changes
+- Evaluated seasonal patterns, identifying January as the highest-crime month and December as the lowest
+- Performed crime-type frequency analysis
+- Identified Vehicle Theft as the most frequent crime (>10% of all incidents)
+- Followed by Simple Assault and Burglary from Vehicle
+- Conducted regional crime analysis across LAPD divisions
+- Identified Central, 77th Street, and Pacific as highest-crime regions
+- Identified Foothill, Hollenbeck, and Mission as lowest-crime regions
+- Integrated unemployment data and performed correlation analysis
+- Identified a negative correlation between unemployment rates and crime volume
+- Interpreted results in the context of COVID-19 lockdowns and post-pandemic mobility
+- Performed day-of-week and time-of-day analysis
+- Found highest crime frequency on Fridays and Saturdays
+- Found most crimes occurring at night (9 PM – 5 AM)
+- Conducted demographic analysis
+- Found average victim age in the late 30s
+- Observed slightly higher average victim age for female victims
+- Identified crimes against older victims concentrated in theft-related offenses
+- Implemented outlier and anomaly detection
+- Used IQR and Z-score methods to identify anomalous months
+- Flagged late-2024 and all 2025 data as unreliable due to LAPD reporting system changes
+- Validated anomalies using heatmap visualization
+- Applied time-series forecasting techniques
+- Implemented ARIMA for yearly crime forecasting (excluding incomplete 2025 data)
+- Forecasted stabilization near 120,000 crimes per year over the next three years
+- Implemented Prophet for monthly forecasting including trend and seasonality
+- Forecasted continued decline toward ~7,500 crimes per month by 2026, with high uncertainty
+- Developed extensive visualizations:
+    - Time-series trend plots
+    - Crime frequency bar charts
+    - Regional comparisons
+    - Correlation scatter plots
+    - Heatmaps for anomaly detection
+    - Forecast plots with confidence intervals
+- Consolidated findings into a structured analytical report with documented assumptions, limitations, and interpretations
+
+**Technical Emphasis**
+
+- Large-scale real-world data cleaning
+- Feature engineering for temporal and demographic analysis
+- Exploratory and diagnostic analytics
+- Economic data integration (FRED)
+- Time-series forecasting (ARIMA, Prophet)
+- Data quality validation and anomaly detection
+- Analytical visualization and storytelling
